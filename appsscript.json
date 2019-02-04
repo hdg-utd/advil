@@ -1,0 +1,23 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+  },
+  "“exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.addons.current.action.compose"
+  ],
+  "gmail": {
+    "name": "Advil",
+    "logoUrl": "https://img.icons8.com/metro/1600/search.png",
+    "primaryColor": "#4285F4",
+    "secondaryColor": "#4285F4",
+    "composeTrigger": {
+      "draftAccess": "NONE",
+      "selectActions": [{
+        "text": "Adds availability from Google Calendar to draft",
+        "runFunction": "updateDraft"
+      }]
+    }
+  }
+}
