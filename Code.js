@@ -1,5 +1,35 @@
 function updateDraft(event) {
-  return [buildTimeCard()];
+  return [builder()];
+}
+
+function builder() {
+  var events = CalendarApp.getEvents(getMonday(), getFriday());
+  for(var i = 0; i < events.length; i++) {
+    var result = events[i].getTitle() + ' ' + events[i].getStartTime() + ' ' + events[i].getEndTime();
+    Logger.log(result);
+  }
+}
+
+function getMonday() {
+  var monday = new Date();
+  var todayDay1 = monday.getDay();
+  monday.setDate(monday.getDate() - (todayDay1 - 1));
+  monday.setHours(9);
+  monday.setMinutes(0);
+  monday.setSeconds(0);
+  
+  return monday;
+}  
+
+function getFriday() {
+  var friday = new Date();
+  var todayDay2 = friday.getDay();
+  friday.setDate(friday.getDate() - (todayDay2 - 6));
+  friday.setHours(9);
+  friday.setMinutes(0);
+  friday.setSeconds(0);
+  
+  return friday;
 }
 
 function buildTimeCard() {
