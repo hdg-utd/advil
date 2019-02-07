@@ -29,7 +29,7 @@ function availabilityBuilder() {
   var thursday2 = getThursday();
   thursday2.setHours(17);
   var thursdayFree = getFreeTime(thursday1, thursday2);
-  var thursdayExtract = freeExtractor(wednesdayFree);
+  var thursdayExtract = freeExtractor(thursdayFree);
   
   var friday1 = getFriday();
   friday1.setHours(9);
